@@ -21,7 +21,7 @@ export default function CurrentlyListening() {
     ).map( (track, index) => {
                     return(
                     <div key={index} className="flex justify-between">
-                        <p className="mb-2"><a href={track.url} rel="nofollow"  target="_blank">{track.track}</a></p>
+                        <p className="mb-2"><a href={track.url} rel="nofollow noreferrer"  target="_blank">{track.track}</a></p>
                         <p className="mb-2 text-sm">{track.artist}</p>
                     </div>)
             })}

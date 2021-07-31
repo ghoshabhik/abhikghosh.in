@@ -8,7 +8,7 @@ export default function Home() {
       <Container
       title="Home for Personal Website/ Developer Portfolio – Abhik Ghosh">
         Index
-        <div className="flex space-x-2">
+        <div className="flex flex-col md:flex-row md:space-x-2 ">
           <CurrentlyListening />
           <CurrentlyReading />
         </div>

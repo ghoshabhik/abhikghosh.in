@@ -34,7 +34,7 @@ export default function CurrentlyReading() {
            {data.map((book, index) => {
                     return(
                     <div key={index} className="flex justify-between">
-                        <p className="mb-2"><a href={book.url} rel="nofollow" target="_blank">{book.title}</a></p>
+                        <p className="mb-2"><a href={book.url} rel="nofollow noreferrer" target="_blank">{book.title}</a></p>
                         <p className="mb-2 text-sm">{book.author}</p>
                     </div>)
             })}
