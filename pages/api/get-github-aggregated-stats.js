@@ -18,14 +18,13 @@ const  handler = async (req, res) => {
         respData = await resp.json()
         let repos = []
         let languages = []
-        console.log(respData)
-        // respData.map( repo => {
-        //     repos.push({
-        //         repo: repo.name,
-        //         laguage: repo.language
-        //     })
-        //     languages.push(repo.language)
-        // })
+        respData.map( repo => {
+            repos.push({
+                repo: repo.name,
+                laguage: repo.language
+            })
+            languages.push(repo.language)
+        })
 
         console.log(languages)
 
@@ -33,7 +32,7 @@ const  handler = async (req, res) => {
         languages.forEach(function (x) { counts[x] = (counts[x] || 0) + 1 })
 
       return res.status(200).json({
-        publicRepo, publicGists, followers, following, stars, repos, laguages: counts
+        publicRepo, publicGists, followers, following, stars, repos, laguages: langArr
       })
     }catch(err){
         console.log(err)
