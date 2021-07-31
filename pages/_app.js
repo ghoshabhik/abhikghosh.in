@@ -3,9 +3,15 @@ import '../styles/globals.css'
 
 import { ThemeProvider } from 'next-themes'
 import { MDXProvider } from '@mdx-js/react'
+
+import initFirebase from '../lib/initFirebase'
+
 import MDXComponents from './../components/MDXComponents'
 
 function MyApp({ Component, pageProps }) {
+
+  initFirebase()
+
   return (
     <ThemeProvider attribute="class">
       <MDXProvider components={MDXComponents}>

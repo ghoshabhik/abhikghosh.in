@@ -5,7 +5,7 @@
 @tailwind utilities;
 
 .highlighted-link {
-    @apply border-b-2 border-yellow-300 dark:border-yellow-600 py-0
+    @apply dark:text-yellow-300 text-yellow-700
  }
 
  .tooltip {
