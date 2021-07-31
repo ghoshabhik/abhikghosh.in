@@ -113,7 +113,7 @@ export default function About() {
             mb-4 
             text-black dark:text-white">Beyond work,</p>
               <p className=" text-gray-600 dark:text-gray-400">
-                      To myself sane in this fast paced world. </p>
+                      To keep myself sane in this fast paced world. </p>
               <p className="mb-10 mt-10">Its not so long ago I started with long run. The city has its effect on me, I
                   guess. At work, I met many of my collegues and friends, who are pro marathon runners. I was so
                   inspired looking at their passion towards running that I decided to give it a try. I did run

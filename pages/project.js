@@ -51,7 +51,7 @@ export default function Project({ posts }) {
                 Please do let me know if you have any comment, suggestion or question on any of the projects. Also use the search box to filter projects by title.`}
             </p>
 
-            <div>
+            <div className="w-full">
             <GithubStats />
             </div>
 
