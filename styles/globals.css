@@ -17,23 +17,25 @@
   }
 
   .prose pre {
-    @apply border border-gray-200 bg-gray-100 dark:border-gray-700 dark:bg-gray-800;
+    @apply border border-gray-200 bg-gray-100 dark:border-gray-700 dark:bg-gray-800 ;
   }
   
   .prose pre code {
-    @apply text-gray-800 dark:text-gray-200 ;
+    @apply text-gray-800 dark:text-gray-200 overflow-hidden break-words;
   }
   
-
+  pre {
+    white-space: pre-wrap;
+    word-break: break-all;
+  }
 
 
 /* Syntax Highlighting */
 
-  .prose > :first-child {
-    /* Override removing top margin, causing layout shift */
+  /* .prose > :first-child {
     margin-top: 1.25em !important;
     margin-bottom: 1.25em !important;
-  }
+  } */
   
   .token.comment,
   .token.prolog,
@@ -95,12 +97,13 @@
     @apply text-gray-800 dark:text-gray-50;
   }
   
-  pre::-webkit-scrollbar {
+
+  /* pre::-webkit-scrollbar {
     display: none;
   }
   
   pre {
-    -ms-overflow-style: none; /* IE and Edge */
-    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; 
+    scrollbar-width: none;
   }
-  
+   */

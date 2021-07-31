@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 
+import { motion } from 'framer-motion'
+
 export default class ContactAirtableForm extends Component {
 
     constructor(props) {
@@ -17,7 +19,10 @@ export default class ContactAirtableForm extends Component {
     render() {
         return (
             <div style={{ width: '100%' }} id="contacts">
-            <div>
+            <motion.div
+            initial={{opacity: 0, scale: 0.5}}
+            animate={{opacity: 1, scale: 1}}
+            >
                 <iframe className="airtable-embed airtable-dynamic-height border rounded-lg" 
                 src="https://airtable.com/embed/shreimpqukyiwrqHw?backgroundColor=purple" 
                 frameBorder="0"  
@@ -25,7 +30,7 @@ export default class ContactAirtableForm extends Component {
                 style={{background: 'transparent', border: '1px solid #ccc'}}
                 >
             </iframe>
-            </div>
+            </motion.div>
             </div>
         )
     }

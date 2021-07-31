@@ -51,7 +51,7 @@ export default function ProjectLayout({ children, frontMatter }) {
             {data? data.view + ' Views' : '--- Views'}
           </p>
         </div>
-        <div className="prose lg:prose-xl dark:prose-dark max-w-none w-full">
+        <div className="prose lg:prose-xl dark:prose-dark">
           {children}
         </div>
         <div className="mt-8">

@@ -6,13 +6,7 @@ image: '/static/images/optimizing-my-digital-content-consumption/banner.png'
 tags: ['tag1', 'tag2','india','check']
 ---
 
-<Image
-  alt={`Feedly & Instapaper`}
-  src={`/static/blog/testeste.jpg`}
-  width={1200}
-  height={630}
-  priority
-/>
+
 
 One ofdsfsdfds
 ## The Old Way
@@ -31,34 +25,9 @@ I was able to solve the aforementioned issues using a combination of Feedly and 
 
 ### Feedly
 
-<Image
-  alt={`Feedly`}
-  src={`/static/blog/testeste.jpg`}
-  width={2136}
-  height={1178}
-  className="rounded-lg"
-/>
 
 
-```js
-import db from '../../lib/db-admin';
 
-export default (req, res) => {
-  if (!req.query.id) {
-    return res.status(400).json({
-      error: 'Missing "id" query parameter'
-    });
-  }
-
-  const ref = db.ref('table').child(req.query.id);
-
-  return ref.once('value', (snapshot) => {
-    res.status(200).json({
-      total: snapshot.val()
-    });
-  });
-};
-```
 
 ```js
 // lib/db-admin.js
