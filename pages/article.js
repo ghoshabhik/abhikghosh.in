@@ -4,14 +4,14 @@ import { getAllFilesFrontMatter } from "../lib/mdx"
 
 import Container from "../components/Container"
 import BlogPost from "../components/BlogPost"
-import TagCloud from '../components/TagCloud';
+import TagCloud from '../components/TagCloud'
 
 
 export default function Article({ posts }) {
 
   const [searchValue, setSearchValue] = useState('')
-  const [filteredSnippets, setFilteredSnippets] = useState(posts)
-  const filteredBlogPosts = filteredSnippets
+  const [filteredPosts, setFilteredPosts] = useState(posts)
+  const filteredBlogPosts = filteredPosts
     .sort(
       (a, b) =>
         Number(new Date(b.publishedAt)) - Number(new Date(a.publishedAt))
@@ -23,9 +23,9 @@ export default function Article({ posts }) {
   const selectedTag = (e) => {
     if(e.target.innerText.split(" (")[0].replace('#','') != 'Show All'){
       const filteredPostsByTag = posts.filter( post => post.tags.includes(e.target.innerText.split(" (")[0].replace('#','')))
-      setFilteredSnippets(filteredPostsByTag)
+      setFilteredPosts(filteredPostsByTag)
     } else{
-      setFilteredSnippets(posts)
+      setFilteredPosts(posts)
     }
   }
 

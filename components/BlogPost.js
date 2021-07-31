@@ -12,13 +12,13 @@ const BlogPost = ({ title, summary, slug }) => {
 
     return (
         <Link href={`/article/${slug}`}>
-        <motion.a className="w-full"
+        <motion.a className="w-full cursor-pointer"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: .5 }}
         >
             <div className="mb-8 w-full">
-            <div className="flex flex-col md:flex-row justify-between">
+            <div className="flex flex-col md:flex-row justify-between ">
                 <h4 className="text-lg md:text-xl font-medium mb-2 w-full text-gray-900 dark:text-gray-100">
                 {title}
                 </h4>

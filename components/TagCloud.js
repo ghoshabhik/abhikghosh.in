@@ -22,13 +22,10 @@ export default function TagCloud({ posts, selectedTag }) {
                     Show All
             </p>
             {tagsArr.map((tag, index) => (
-                <motion.p className=" px-2 py-1 m-1 rounded-md border dark:border-gray-700 text-center text-md cursor-pointer" key={index} onClick={(e) => selectedTag(e)}
-                initial={{ opacity:0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: .2, delay: index*.1 }}
+                <p className=" px-2 py-1 m-1 rounded-md border dark:border-gray-700 text-center text-md cursor-pointer" key={index} onClick={(e) => selectedTag(e)}
                 >
                     {tag[0]}
-                </motion.p>
+                </p>
             ))}
         </div>
     </div>

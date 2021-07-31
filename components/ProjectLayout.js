@@ -1,13 +1,11 @@
 import Link from 'next/link'
-import Image from 'next/image'
-import { parseISO, format } from 'date-fns'
-import useSWR from 'swr'
-
-import { TwitterShareButton } from 'react-share'
+import Image from 'next/image';
+import { parseISO, format } from 'date-fns';
+import useSWR from 'swr';
 
 import fetcher from '../lib/fetcher'
 import Container from './Container'
-import Comments from './Comments'
+import Comments from './Comments';
 
 
 const editUrl = (slug) =>
@@ -17,21 +15,21 @@ const editUrl = (slug) =>
 //     `https://leerob.io/blog/${slug}`
 //   )}`;
 
-export default function BlogLayout({ children, frontMatter }) {
+export default function ProjectLayout({ children, frontMatter }) {
 
   const { data : postData } = useSWR(`/api/post-page-view?id=${frontMatter.slug}`, fetcher)
   const { data } = useSWR(`/api/get-page-view?id=${frontMatter.slug}`, fetcher, {refreshInterval: 2000})
 
   return (
       <Container>
-      <div className="flex items-center justify-start space-x-4 mt-20 w-full 
+      <div className="flex items-center justify-start space-x-4 mt-20 
               border border-gray-300 dark:border-gray-700 
               rounded-lg py-10 px-2 md:px-10">
       <article className="flex flex-col justify-center items-start mx-auto mb-16 px-2 lg:px-0">
         <h1 className="font-bold text-3xl md:text-5xl tracking-tight mb-4 text-black dark:text-white">
           {frontMatter.title}
         </h1>
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-center mt-2 mb-10">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-center w-full mt-2 mb-10">
           <div className="flex items-center">
             <Image
               alt="Abhik Ghosh"
@@ -98,22 +96,8 @@ export default function BlogLayout({ children, frontMatter }) {
                 </p></div>
         </div>        
       <Comments />
-      
       </div>
-      <div className="fixed md:bottom-24 md:left-2 bottom-10 right-10">
-          <TwitterShareButton url={`https://abhikghosh.in/article/${frontMatter.slug}`}>
-          <div className="flex items-center space-x-3"> 
-          <p className="hidden xl:block">Share on Twitter</p>
-          <p className="hidden md:block"> <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-          </svg> 
-          </p> 
-          <p>
-          <svg xmlns="http://www.w3.org/2000/svg" className="md:h-10 md:w-10 h-7 w-7" fill="#3BA9EE" viewBox="0 0 24 24"><path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6.5 8.778c-.441.196-.916.328-1.414.388.509-.305.898-.787 1.083-1.362-.476.282-1.003.487-1.564.597-.448-.479-1.089-.778-1.796-.778-1.59 0-2.758 1.483-2.399 3.023-2.045-.103-3.86-1.083-5.074-2.572-.645 1.106-.334 2.554.762 3.287-.403-.013-.782-.124-1.114-.308-.027 1.14.791 2.207 1.975 2.445-.346.094-.726.116-1.112.042.313.978 1.224 1.689 2.3 1.709-1.037.812-2.34 1.175-3.647 1.021 1.09.699 2.383 1.106 3.773 1.106 4.572 0 7.154-3.861 6.998-7.324.482-.346.899-.78 1.229-1.274z"/></svg> 
-          </p>
-          </div>
-          </TwitterShareButton>
-      </div>
+
       </Container>
       
   );
