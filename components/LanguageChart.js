@@ -13,12 +13,14 @@ function getRandomColor() {
 
 const LanguageChart = ({languages}) => {
 
+    // console.log(languages)
+
     let labels = []
     let dataSet = []
     let backgroundColor = []
 
     for (const [key, value] of Object.entries(languages)) {
-        console.log(`${key}: ${value}`);
+        // console.log(`${key}: ${value}`);
         labels.push(key)
         dataSet.push(value)
         backgroundColor.push(getRandomColor())
@@ -39,6 +41,7 @@ const LanguageChart = ({languages}) => {
 
   return(
   <>
+    <p className="text-center text-sm font-semibold mb-2">Github Repo Languages</p>
     <Doughnut data={data} options={{
         plugins: {
             legend: {

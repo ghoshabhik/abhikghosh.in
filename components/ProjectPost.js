@@ -40,12 +40,13 @@ const BlogPost = ({ title, summary, slug, image, gitHub, hosted }) => {
                 </div>
                 <p className="font-thin px-3 py-3 text-base text-gray-700 dark:text-gray-400">{summary}</p>
                 </div>
-                <div className="flex justify-between items-center px-3 py-2 text-base text-gray-700 dark:text-gray-400">
+                
+        </a>
+        </Link>
+        <div className="flex justify-between items-center px-3 py-2 text-base text-gray-700 dark:text-gray-400">
                     <a href={gitHub}>GitHub Repo</a>
                     <a href={hosted}>Hosted URL</a>
                 </div>
-        </a>
-        </Link>
         </motion.div>
   );
 };
