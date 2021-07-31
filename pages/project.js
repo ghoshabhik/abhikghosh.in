@@ -52,7 +52,7 @@ export default function Project({ posts }) {
             </p>
 
             <div>
-            {/* <GithubStats /> */}
+            <GithubStats />
             </div>
 
             <div className="relative w-full mb-4">

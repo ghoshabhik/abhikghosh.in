@@ -16,17 +16,21 @@ const LanguageChart = ({languages}) => {
     let labels = []
     let dataSet = []
     let backgroundColor = []
-    languages.map( (lang,index) => {
-        labels.push(lang)
+
+    for (const [key, value] of Object.entries(languages)) {
+        console.log(`${key}: ${value}`);
+        labels.push(key)
+        dataSet.push(value)
         backgroundColor.push(getRandomColor())
-    })
+      }
+
 
     const data = {
         labels: labels,
         datasets: [
           {
             label: 'Repo Languages',
-            data: [10, 1, 5, 2, 1, 4, 7],
+            data: dataSet,
             backgroundColor: backgroundColor,
             borderWidth: 1,
           },
