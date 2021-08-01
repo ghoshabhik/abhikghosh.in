@@ -1,6 +1,7 @@
 import CurrentlyListening from "../components/CurrentlyListening"
 import CurrentlyReading from "../components/CurrentlyReading"
 import Tweets from "../components/Tweets"
+import Instagram from "../components/Instagram"
 import ProfileLinks from "../components/ProfileLinks"
 import Container from "../components/Container"
 
@@ -16,6 +17,7 @@ export default function Home() {
           <CurrentlyReading />
         </div>
         <Tweets />
+        <Instagram />
         <ProfileLinks />
       </Container>
     </div>

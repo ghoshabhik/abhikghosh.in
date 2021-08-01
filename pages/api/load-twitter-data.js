@@ -15,7 +15,6 @@ const  handler = async (req, res) => {
     
   };
 
-  const fireStoreRef = admin.firestore().collection('twitter')
   if(req.method === 'GET'){
     try {
 
