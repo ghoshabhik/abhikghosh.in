@@ -38,7 +38,7 @@ const BlogPost = ({ title, summary, slug, image, gitHub, hosted }) => {
                 {`${data ? data?.view : '–––'} views`}
                 </p>
                 </div>
-                <p className="font-thin px-3 py-3 text-base text-gray-700 dark:text-gray-400">{summary}</p>
+                <p className="font-thin px-3 py-3 text-gray-800 dark:text-gray-300">{summary}</p>
                 </div>
                 
         </a>

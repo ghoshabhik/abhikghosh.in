@@ -20,9 +20,9 @@ export default function CurrentlyListening() {
         Number(new Date(b.popularity)) - Number(new Date(a.popularity))
     ).map( (track, index) => {
                     return(
-                    <div key={index} className="flex justify-between">
-                        <p className="mb-2"><a href={track.url} rel="nofollow noreferrer"  target="_blank">{track.track}</a></p>
-                        <p className="mb-2 text-sm">{track.artist}</p>
+                    <div key={index} className="flex justify-between mb-2">
+                        <p className="text-black dark:text-gray-100"><a href={track.url} rel="nofollow noreferrer"  target="_blank">{track.track}</a> - <span className="text-md text-gray-500 dark:text-gray-400">{track.artist}</span></p>
+                        
                     </div>)
             })}
         </div>
