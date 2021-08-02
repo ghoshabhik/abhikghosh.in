@@ -18,7 +18,7 @@ const BlogPost = ({ title, summary, slug, image, gitHub, hosted }) => {
         whileHover={{ borderColor: '#CE3F37' }}
         transition={{ duration: .2 }}
         >
-        <Link href={`/project/${slug}`}>
+        <Link href={`/snippet/${slug}`}>
         <a>
             <div className="mb-8 w-full">
             <div className="flex flex-col justify-center ">

@@ -45,7 +45,7 @@ export default function NavigationBar() {
             {/* Nav Links */}
             <div className="md:flex md:space-x-5 hidden">
               <Link href="/" passHref><a>Home</a></Link>
-              <Link href="/project" passHref><a>Project</a></Link>
+              <Link href="/snippet" passHref><a>Snippets</a></Link>
               <Link href="/article" passHref><a>Articles</a></Link>
               <Link href="/about" passHref><a>About</a></Link>
             </div>
@@ -71,7 +71,7 @@ export default function NavigationBar() {
           space-y-2 px-5 pb-2
           text-right font-semibold">
             <Link href="/" passHref><a>Home</a></Link>
-            <Link href="/project" passHref><a>Project</a></Link>
+            <Link href="/snippet" passHref><a>Snippets</a></Link>
             <Link href="/article" passHref><a>Articles</a></Link>
             <Link href="/about" passHref><a>About</a></Link>
           </div>

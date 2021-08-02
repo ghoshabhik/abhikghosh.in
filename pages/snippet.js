@@ -4,10 +4,10 @@ import { getAllFilesFrontMatter } from "../lib/mdx"
 
 import Container from "../components/Container"
 import TagCloud from '../components/TagCloud'
-import ProjectPost from '../components/ProjectPost'
+import ProjectPost from '../components/SnippetPost'
 import GithubStats from '../components/GithubStats';
 
-export default function Project({ posts }) {
+export default function Snippet({ posts }) {
 
   const [searchValue, setSearchValue] = useState('')
   const [filteredProjects, setFilteredProjects] = useState(posts)
@@ -98,7 +98,7 @@ export default function Project({ posts }) {
 
 
 export async function getStaticProps() {
-  const posts = await getAllFilesFrontMatter('project');
+  const posts = await getAllFilesFrontMatter('snippet');
 
   return { props: { posts } };
 }

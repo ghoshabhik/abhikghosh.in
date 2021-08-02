@@ -2,7 +2,7 @@ import { MDXRemote } from 'next-mdx-remote';
 
 import { getFiles, getFileBySlug } from '../../lib/mdx'
 import MDXComponents from '../../components/MDXComponents'
-import ProjectLayout from '../../components/ProjectLayout'
+import ProjectLayout from '../../components/SnippetLayout'
 
 export default function Project({ mdxSource, frontMatter }) {
 
@@ -19,7 +19,7 @@ export default function Project({ mdxSource, frontMatter }) {
 }
 
 export async function getStaticPaths() {
-  const posts = await getFiles('project');
+  const posts = await getFiles('snippet');
 
   return {
     paths: posts.map((p) => ({
@@ -32,7 +32,7 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-  const post = await getFileBySlug('project', params.slug);
+  const post = await getFileBySlug('snippet', params.slug);
 //   const tweets = await getTweets(post.tweetIDs);
 
   return { props: { ...post } };
