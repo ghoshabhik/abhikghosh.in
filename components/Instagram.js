@@ -19,8 +19,8 @@ export default function Instagram() {
                     return(
                     
                         <div className="w-full rounded-md" key={index}>
-                            <Image src={post.media_url} width={400} height={400}  className="w-full rounded-md"/>
-                            <p className="text-center text-black dark:text-gray-100"><a href={post.permalink} rel="nofollow noreferrer"  target="_blank">{post.caption}</a></p>
+                            <Image src={post.post.media_url} width={400} height={400}  className="w-full rounded-md"/>
+                            <p className="text-center text-black dark:text-gray-100"><a href={post.post.permalink} rel="nofollow noreferrer"  target="_blank">{post.post.caption}</a></p>
                         </div>
                     )
             })}

@@ -23,20 +23,28 @@ const  handler = async (req, res) => {
                 {
                     caption: item.caption,
                     media_url: item.media_url,
-                    permalink: item.permalink
+                    permalink: item.permalink,
+                    id: item.id
                 }
             ))
 
-            console.log(feed)
+            console.log('feed---', feed)
             const fireStoreRef = admin.firestore()
             
-            let arobj = {
-                arr: feed
-            }
+            feed.map(async post => {
+              const docExists = await fireStoreRef.collection('instagram').doc(post.id).get()
+              if(!docExists.exists){
+                await fireStoreRef.collection('instagram').doc(post.id).set({post, createdAt: admin.firestore.Timestamp.fromDate(new Date())})
+              }
+            })    
+
+            // let arobj = {
+            //     arr: feed
+            // }
                 
-            await fireStoreRef.collection('instagram').doc('feed').set(arobj)
+            // await fireStoreRef.collection('instagram').doc('feed').set(arobj)
             
-            return res.status(500).json(arobj.slice(0,2))
+            return res.status(500).json(feed)
         }
     }catch(err){
       return res.status(500).json(err);

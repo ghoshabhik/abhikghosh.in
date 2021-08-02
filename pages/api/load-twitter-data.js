@@ -65,7 +65,7 @@ const  handler = async (req, res) => {
                     }
                 })
             })
-            console.log(tweets)
+            // console.log(tweets)
             const fireStoreRef = admin.firestore()
 
             // let myarr  =[{test: "name", test1: "tetstststs"},{test: "name1", test1: "tetstststs"},{test: "name3", test1: "tetstststs"}]
@@ -97,14 +97,21 @@ const  handler = async (req, res) => {
             //     }
             //   ]
             
-            let arobj = {
-                arr: tweets
-            }
+            // let arobj = {
+            //     arr: tweets
+            // }
+
+            tweets.map( async tweet => {
+              const docExists = await fireStoreRef.collection('twitter').doc(tweet.tweet_id).get()
+              if(!docExists.exists){
+                await fireStoreRef.collection('twitter').doc(tweet.tweet_id).set({tweet, createdAt: admin.firestore.Timestamp.fromDate(new Date())})
+              }
+            })
                 
-            await fireStoreRef.collection('twitter_data').doc('liked').set(arobj)
+            // await fireStoreRef.collection('twitter_data').doc('liked').set(arobj)
             
         
-            return res.status(500).json(arobj)
+            return res.status(500).json(tweets)
         }
     }catch(err){
       return res.status(500).json(err);
