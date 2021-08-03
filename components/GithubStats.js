@@ -12,7 +12,7 @@ export default function GithubStats() {
 
     return (
 
-        <div className="grid md:grid-cols-2 grid-cols-1 gap-1 align-middle md:w-3/4 mx-auto
+        <div className="grid md:grid-cols-2 grid-cols-1 gap-1 md:w-3/4 mx-auto
         my-10">
             <div className="p-3">{data ? <LanguageChart languages={data.laguages}/> : '---'}</div>
             <div className="
@@ -24,7 +24,7 @@ export default function GithubStats() {
                 <div><StatusCard name={'Following'} count={data ? data.following : '---'}/></div>
                 <div><StatusCard name={'Starred Repo'} count={data ? data.stars : '---'}/></div>
             </div>
-            <div className="fixed md:bottom-24 md:left-2 bottom-10 right-10">
+            {/* <div className="fixed md:bottom-24 md:left-2 bottom-10 right-10">
                 
                 <a href="https://github.com/ghoshabhik" rel="nofollow noreferrer" target="_blank">
                 <div className="flex items-center space-x-3">
@@ -36,7 +36,7 @@ export default function GithubStats() {
                 </div>
                 </a>
                 
-            </div>
+            </div> */}
 
         </div>
     )

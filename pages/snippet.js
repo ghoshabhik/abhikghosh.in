@@ -5,7 +5,6 @@ import { getAllFilesFrontMatter } from "../lib/mdx"
 import Container from "../components/Container"
 import TagCloud from '../components/TagCloud'
 import ProjectPost from '../components/SnippetPost'
-import GithubStats from '../components/GithubStats';
 
 export default function Snippet({ posts }) {
 
@@ -43,7 +42,7 @@ export default function Snippet({ posts }) {
             font-bold text-3xl md:text-5xl tracking-tight 
             mb-4 
             text-black dark:text-white">
-              My Projects
+              Code Snippets
             </h1>
             <p className="text-gray-600 dark:text-gray-400 mb-4">
               {`I would like to highlight these ${posts.length} projects here.
@@ -51,13 +50,11 @@ export default function Snippet({ posts }) {
                 Please do let me know if you have any comment, suggestion or question on any of the projects. Also use the search box to filter projects by title.`}
             </p>
 
-            <div className="w-full">
-            <GithubStats />
-            </div>
+            
 
             <div className="relative w-full mb-4">
             <input
-              aria-label="Search projects"
+              aria-label="Search code snippets"
               type="text"
               onChange={(e) => setSearchValue(e.target.value)}
               placeholder="Search projects"

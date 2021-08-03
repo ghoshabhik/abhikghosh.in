@@ -7,7 +7,10 @@ const  handler = async (req, res) => {
     try {
       const snap = await fireStoreRef.doc('playlist_tracks').get()
       const tracks = await snap.data()
-      return res.status(200).json(tracks)
+
+      const snapPlaylist = await fireStoreRef.doc('spotify_top_tracks').get()
+      const topTracks = await snapPlaylist.data()
+      return res.status(200).json(tracks, topTracks)
     }catch(err){
       return res.status(500).json(err);
     } 

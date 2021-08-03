@@ -47,7 +47,7 @@ export default function NavigationBar() {
               <Link href="/" passHref><a>Home</a></Link>
               <Link href="/snippet" passHref><a>Snippets</a></Link>
               <Link href="/article" passHref><a>Articles</a></Link>
-              <Link href="/about" passHref><a>About</a></Link>
+              <Link href="/recents" passHref><a>Dash</a></Link>
             </div>
             
             <div className="flex space-x-2 items-center">
@@ -73,7 +73,7 @@ export default function NavigationBar() {
             <Link href="/" passHref><a>Home</a></Link>
             <Link href="/snippet" passHref><a>Snippets</a></Link>
             <Link href="/article" passHref><a>Articles</a></Link>
-            <Link href="/about" passHref><a>About</a></Link>
+            <Link href="/recents" passHref><a>Dash</a></Link>
           </div>
         </div> }
       </div>
