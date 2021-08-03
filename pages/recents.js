@@ -13,7 +13,8 @@ export default function Recents() {
     <div className="">
       <Container
       title="Home for Personal Website/ Developer Portfolio – Abhik Ghosh">
-        <div className="border border-gray-300 dark:border-gray-700 rounded-lg py-10 px-2 md:px-10 mt-10 mb-3">
+        <div className="h-36"></div>
+        <div className="border border-gray-300 dark:border-gray-700 rounded-lg py-10 px-2 md:px-10 mb-3">
         <h1 className="
             font-bold text-3xl md:text-5xl tracking-tight 
             mb-4 

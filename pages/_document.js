@@ -31,7 +31,7 @@ class MyDocument extends Document {
             }}
           />
         </Head>
-        <body className="dark:bg-gray-900 dark:text-gray-50 lg:text-lg md:text-md">
+        <body className="dark:bg-gray-900 dark:text-gray-50 font-body antialiased">
           <Main />
           <NextScript />
         </body>

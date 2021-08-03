@@ -27,6 +27,7 @@ export default function About() {
       <Container
       title="About Me – Abhik Ghosh"
       description="Professional Experience, technical skills - summary">
+        <div className="h-36"></div>
         <div className="mb-5">
           <div className="border border-gray-300 dark:border-gray-700 rounded-lg py-10 px-2 md:px-10 mt-10 lg:text-lg">
             <p className="font-bold text-3xl md:text-5xl tracking-tight 

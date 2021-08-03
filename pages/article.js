@@ -34,11 +34,11 @@ export default function Article({ posts }) {
       <Container
       title="Articles/ Blog Posts – Abhik Ghosh"
       description="Technical Writing on various technologies and trends, primarily on the data and cloud platforms">
-        
+        <div className="h-36"></div>
         <div className="
         border border-gray-300 dark:border-gray-700 
         rounded-lg 
-        py-10 px-2 md:px-10 mt-10">
+        py-10 px-2 md:px-10">
           <div className="flex flex-col justify-center items-start mb-20">
             <h1 className="
             font-bold text-3xl md:text-5xl tracking-tight 

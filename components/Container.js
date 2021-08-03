@@ -48,7 +48,7 @@ export default function Container(props) {
         )}
     </Head>
         <nav className="">
-            <div className="pb-20">
+            <div className=" bg-blue-400" id="intro">
                 <NavigationBar />
             </div>
         </nav>

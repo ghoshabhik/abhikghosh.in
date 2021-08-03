@@ -24,7 +24,8 @@ export default function BlogLayout({ children, frontMatter }) {
 
   return (
       <Container>
-      <div className="flex items-center justify-start space-x-4 mt-20 w-full 
+        <div className="h-36"></div>
+      <div className="flex items-center justify-start space-x-4  w-full 
               border border-gray-300 dark:border-gray-700 
               rounded-lg py-10 px-2 md:px-10">
       <article className="flex flex-col justify-center items-start mx-auto mb-16 px-2 lg:px-0">

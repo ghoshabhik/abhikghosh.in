@@ -20,6 +20,22 @@ module.exports = {
       '8/10': '80%'
      },
     extend: {
+      colors: {
+        websitelight:{
+          lightest: '#FFFFFF',
+          light: '#F9F6F7',
+          DEFAULT: '#FFE8D6',
+          orange: '#FF971D',
+          url: '#CE3F37'
+        },
+        websitedark:{
+          darkest: '#082032',
+          darker: '#2C394B',
+          DEFAULT: '#334756',
+          orange: '#FF4C29',
+          url: '#D97706'
+        }
+      },
       fontFamily: {
         'body': ["Inter", "sans-serif"],
         'header': ["WindSong", "sans-serif"],
