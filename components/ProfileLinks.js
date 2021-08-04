@@ -5,7 +5,7 @@ export default function ProfileLinks({name, count}) {
     return (
         <>
         <div className="xl:fixed xl:bottom-2 xl:left-2 bottom-2 right-5 w-max mx-auto xl:mx-0">
-        <div className="inline-flex xl:flex-col space-y-2 items-center space-x-1 text-gray-400 dark:text-gray-700">
+        <div className="inline-flex xl:flex-col space-y-2 items-center space-x-1 text-gray-400 dark:text-gray-600">
             {/* <div className="transform rotat"><p className="transform rotate-90">abhik.ghosh5@gmail.com</p></div> */}
             {/* <div className="h-32 w-1 bg-gray-600 dark:bg-gray-200 mb-32"></div> */}
             {/* <div className="transform -rotate-90 mb-24">abhik.ghosh5@gmail.com</div> */}

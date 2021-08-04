@@ -12,7 +12,7 @@ class MyDocument extends Document {
     return (
       <Html className="">
         <Head >
-          <link rel="icon" href="/static/images/favicon.ico" />
+          
           {/* Global Site Tag (gtag.js) - Google Analytics */}
           <script
             async

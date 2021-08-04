@@ -26,9 +26,14 @@ export default function Container(props) {
   };
 
   return (
-    <div className="">
+    <div className="" id="layout">
     <Head>
         <title>{meta.title}</title>
+        <link rel="icon" href="/static/images/favicon.ico" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/static/images/apple-touch-icon.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/static/images/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/static/images/favicon-16x16.png" />
+        <link rel="manifest" href="/static/images/site.webmanifest"></link>
         <meta name="robots" content="follow, index" />
         <meta content={meta.description} name="description" />
         <meta property="og:url" content={`https://www.abhikghosh.in${router.asPath}`} />
@@ -48,12 +53,12 @@ export default function Container(props) {
         )}
     </Head>
         <nav className="">
-            <div className=" bg-blue-400" id="intro">
+            <div className=" " id="intro">
                 <NavigationBar />
             </div>
         </nav>
-        <main id="skip" className="
-            xl:w-3/5 lg:w-4/5 mx-auto 
+        <div id="skip" className="
+            xl:w-3/5 lg:w-4/5 w-full lg:mx-auto 
             px-2 lg:px-0">
             <motion.div key={router.route} initial="pageInitial" animate="pageAnimate" variants={{
             pageInitial: {
@@ -66,7 +71,8 @@ export default function Container(props) {
                 {children}
             </motion.div>
             <Footer />
-        </main>
+        </div>
+
     </div>
   );
 }

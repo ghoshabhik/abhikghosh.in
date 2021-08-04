@@ -5,22 +5,27 @@ import { motion } from 'framer-motion'
 import ProfileLinks from "../components/ProfileLinks"
 import Container from "../components/Container"
 import AboutMe from "../components/AboutMe"
+import Experience from "../components/Experience"
+import ProjectSection from "../components/ProjectsSection"
+import SiteContentSection from "../components/SiteContentSection"
+import ContactSection from "../components/ContactSection"
 
 export default function Home() {
   return (
-    <div className="">
       <Container
       title="Home for Personal Website/ Developer Portfolio – Abhik Ghosh">
+        <div className="xl:h-36 h-20  w-full"  id="hero"></div>
+        <div className="flex flex-col space-y-5 w-full">
         {/* Hero Section */}
-        <div className="flex flex-col space-y-5">
-        <div className='relative' id="hero">
-        <div className="flex flex-col justify-center xl:items-start space-y-4
-        w-full min-h-screen 
+        
+        <div className='relative w-full  border-gray-300 dark:border-gray-700 '>
+        <div className="flex flex-col justify-center items-start space-y-4 min-h-screen
+        w-full xl:w-3/4
         ">
           
           <p className="text-websitedark-orange dark:text-websitedark-orange text-xl">Hi, my name is</p>
-          <h1 className="xl:text-7xl lg:text-6xl md:text-5xl text-4xl font-bold tracking-tight">Abhik Ghosh.</h1>
-          <h2 className="xl:text-5xl lg:text-4xl md:text-3xl text-2xl font-bold tracking-tight text-gray-400 dark:text-websitedark">Data Solution Architect.</h2>
+          <h1 className="xl:text-7xl lg:text-6xl text-5xl font-bold tracking-tight">Abhik Ghosh.</h1>
+          <h2 className="xl:text-5xl lg:text-4xl text-3xl font-bold tracking-tight text-gray-400 dark:text-websitedark">Data Solution Architect.</h2>
           <p className="text-gray-600 dark:text-gray-400">Over 13 years of my experience in data engineering and software development is focussed on 
           empowering data-driven customer growth. Currently I am working on data warehouse design, cloud migration and modernization of data platforms.
           I have a deep passion towards clean code and efficient design techniques.</p>
@@ -37,21 +42,21 @@ export default function Home() {
           </Link>
           </div>
           
-           <div className="font-bold tracking-tight text-gray-400 dark:text-websitedark
-            absolute right-1 bottom-10
+           {/* <div className="font-bold tracking-tight text-gray-400 dark:text-websitedark
+            absolute right-1 bottom-32
            "><Link href="#about" passHref>
            <a className="flex space-x-2"
            ><span>More About Me</span> <svg className="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="currentColor"><path d="M11 21.883l-6.235-7.527-.765.644 7.521 9 7.479-9-.764-.645-6.236 7.529v-21.884h-1v21.883z"/></svg></a>
-         </Link></div>
+         </Link></div> */}
         </div>
         </div>
         
         {/* About Me */}
-        <div className='relative py-20  min-h-screen' id="about">
+        <div className='relative pt-20 md:pt-48 pb-20 md:pb-0' id="about">
           <div className="flex flex-col justify-center items-center space-y-4
           ">
             <AboutMe />
-            <div className="flex items-center justify-between">
+            {/* <div className="flex items-center justify-between">
               <div className="font-bold tracking-tight text-gray-400 dark:text-websitedark
               absolute left-1 bottom-10 
             "><Link href="#intro" passHref>
@@ -65,18 +70,18 @@ export default function Home() {
               <a className="flex space-x-2"
               ><span>My Work Ex</span> <svg className="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="currentColor"><path d="M11 21.883l-6.235-7.527-.765.644 7.521 9 7.479-9-.764-.645-6.236 7.529v-21.884h-1v21.883z"/></svg></a>
             </Link></div>
-         </div>
+         </div> */}
           </div>
         </div>
 
         {/* Experiences */}
-        <div className='relative py-20  min-h-screen' id="experience">
-          <div className="flex flex-col justify-center xl:items-start space-y-4
+        <div className='relative py-20 md:pt-48 pb-20 md:pb-0' id="experience">
+          <div className="flex flex-col justify-center xl:items-start space-y-4 
           
           ">
-            Experiences Section
-        
-            <div className="flex items-center justify-between">
+            
+            <Experience />
+            {/* <div className="flex items-center justify-between">
               <div className="font-bold tracking-tight text-gray-400 dark:text-websitedark
               absolute left-1 bottom-10
             "><Link href="#about" passHref>
@@ -90,18 +95,18 @@ export default function Home() {
               <a className="flex space-x-2"
               ><span>My Projects</span> <svg className="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="currentColor"><path d="M11 21.883l-6.235-7.527-.765.644 7.521 9 7.479-9-.764-.645-6.236 7.529v-21.884h-1v21.883z"/></svg></a>
             </Link></div>
-         </div>
+         </div> */}
           </div>
         </div>
 
         {/* Projects */}
-        <div className='relative py-20  min-h-screen' id="projects">
+        <div className='relative py-20 md:pt-48 pb-20 md:pb-0' id="projects">
           <div className="flex flex-col justify-center xl:items-start space-y-4
 
           ">
-            Projects Section
+            <ProjectSection />
           
-            <div className="flex items-center justify-between">
+            {/* <div className="flex items-center justify-between">
               <div className="font-bold tracking-tight text-gray-400 dark:text-websitedark
               absolute left-1 bottom-10
             "><Link href="#experience" passHref>
@@ -115,18 +120,18 @@ export default function Home() {
               <a className="flex space-x-2"
               ><span>Next on this website</span> <svg className="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="currentColor"><path d="M11 21.883l-6.235-7.527-.765.644 7.521 9 7.479-9-.764-.645-6.236 7.529v-21.884h-1v21.883z"/></svg></a>
             </Link></div>
-         </div>
+         </div> */}
           </div>
         </div>
 
         {/* Blog and Snippets */}
-        <div className='relative py-20  min-h-screen' id="blog">
+        <div className='relative py-20 md:pt-48 pb-20 md:pb-0' id="blog">
           <div className="flex flex-col justify-center xl:items-start space-y-4
 
           ">
-            Blog and Snippets Section
+            <SiteContentSection />
            
-            <div className="flex items-center justify-between">
+            {/* <div className="flex items-center justify-between">
               <div className="font-bold tracking-tight text-gray-400 dark:text-websitedark
               absolute left-1 bottom-10
             "><Link href="#projects" passHref>
@@ -140,16 +145,16 @@ export default function Home() {
               <a className="flex space-x-2"
               ><span>Get in Touch</span> <svg className="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="currentColor"><path d="M11 21.883l-6.235-7.527-.765.644 7.521 9 7.479-9-.764-.645-6.236 7.529v-21.884h-1v21.883z"/></svg></a>
             </Link></div>
-         </div>
+         </div> */}
           </div>
         </div>
 
         {/* Contact */}
-        <div className='relative py-20  min-h-screen' id="contact">
+        <div className='relative py-20 md:pt-48 pb-20 md:pb-0' id="contact">
           <div className="flex flex-col justify-center xl:items-start space-y-4
 
           ">
-            Contact Section
+            <ContactSection />
             dsfsdfsdfsdfsdsdsdsdsdsdsdsds dsdsdsdsdsdsdsdsds dsdsdsdsdsdsdsdsdsdsdsdsdsd
             dsfsdfs dfsdfsdsdsdsdsdsdsdsdsd sdsdsdsd sdsdsdsdsdsdsdsdsds dsdsdsdsdsdsdsdsd
             dsfsdfsdf sdfsdsdsdsdsdsdsdsdsd sdsdsdsdsdsdsdsdsd sdsdsdsdsd sdsdsdsdsdsdsdsd
@@ -158,8 +163,8 @@ export default function Home() {
             dsfsdfsdfsdfsdsdsdsdsdsdsd sdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsd sdsdsd
             dsfsdfs dfsdfsds dsdsdsdsdsdsdsdsdsd sdsdsdsdsdsds dsdsdsdsdsdsdsds dsdsdsdsdsd
             dsfsdf sdfsdfsdsdsdsds dsdsdsdsdsdsdsdsdsds dsdsd sdsdsdsdsdsdsdsdsds dsdsdsdsd
-            <ProfileLinks />
-            <div className="flex items-center justify-between">
+             <ProfileLinks />
+            {/* <div className="flex items-center justify-between">
               <div className="font-bold tracking-tight text-gray-400 dark:text-websitedark
               absolute left-1 bottom-10
             "><Link href="#blog" passHref>
@@ -174,12 +179,12 @@ export default function Home() {
               ><span>To the top</span> <svg className="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="currentColor"><path d="M11 2.206l-6.235 7.528-.765-.645 7.521-9 7.479 9-.764.646-6.236-7.53v21.884h-1v-21.883z"/></svg></a>
             </Link></div>
          </div>
-          </div>
+          </div> */}
         </div>
         </div>
         
-        
+        </div>
       </Container>
-    </div>
+
   )
 }

@@ -5,8 +5,10 @@
 @tailwind utilities;
 
 .highlighted-link {
-    @apply dark:text-yellow-300 text-yellow-700
+    color: "#CE3F3"
  }
+
+ /* CE3F3 */
 
  .tooltip {
     @apply invisible absolute;
@@ -116,4 +118,8 @@
 .no-scrollbar {
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
+}
+
+#layout{
+  width: fit-content;
 }
