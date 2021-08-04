@@ -37,8 +37,8 @@ export default function AboutMe() {
                 <p className="mt-3">
                 Love for programming begun at an early age with <a className="text-websitedark-orange font-semibold" href="https://en.wikipedia.org/wiki/Antitrust_(film)" target="_blank"
                 rel="noreferrer"
-                >Antitrust</a>, a childhood movie, fascinated with Milo's character I kept spending hours on computer - mostly playing games though.
-                Real learning started in my GWBasic, QBasic class. Then things became serious! Always loved the ability to solve world's biggest problems from the corner of a garage :) 
+                >Antitrust</a>, a childhood movie, fascinated with Milo&apos;s character I kept spending hours on computer - mostly playing games though.
+                Real learning started in my GWBasic, QBasic class. Then things became serious! Always loved the ability to solve world&apos;s biggest problems from the corner of a garage :) 
                 </p>
             </div>
             {/* <div className="hidden xl:block">
