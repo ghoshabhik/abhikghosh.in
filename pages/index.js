@@ -18,7 +18,7 @@ export default function Home() {
         <div className="flex flex-col space-y-5 w-full">
         {/* Hero Section */}
         
-        <div className='relative w-full  border-gray-300 dark:border-gray-700 '>
+        <div className='relative w-full  border-gray-300 dark:border-gray-700 transform xl:-translate-y-28'>
         <div className="flex flex-col justify-center items-start space-y-4 min-h-screen
         w-full xl:w-3/4
         ">
@@ -35,7 +35,7 @@ export default function Home() {
             whileHover={{ scale : 1.05}}
             >Get in touch</motion.a>
           </Link>
-          <Link href="#about" passHref>
+          <Link href="#experience" passHref>
             <motion.a className="border-2 border-websitedark-orange dark:border-websitedark-orange px-3 py-2 rounded-lg "
             whileHover={{ scale : 1.05}}
             >Resume</motion.a>

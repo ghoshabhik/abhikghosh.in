@@ -56,6 +56,7 @@ export default function AboutMe() {
                 <div className="border-b-2 w-1/3 mx-auto mt-10 hidden xl:block"></div>
             </div>
         </div>
+        
     </div>
     )
   }
