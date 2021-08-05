@@ -12,6 +12,7 @@ export default function Home() {
         <div>&copy; Abhik Ghosh | Created with NextJs and Firebase. Hosted on Vercel ✌️</div>   
         <div className="flex flex-row space-x-5 justify-center">
             <Link href="/" passHref><a>Home</a></Link>
+            <Link href="/resume" passHref><a>Resume</a></Link>
             <Link href="/snippet" passHref><a>Snippets</a></Link>
             <Link href="/article" passHref><a>Articles</a></Link>
             <Link href="/recents" passHref><a>Dash</a></Link>

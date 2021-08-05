@@ -1,7 +1,13 @@
-import Link from 'next/link'
-import Image from 'next/image'
 
-import { useState } from 'react'
+function Uni(){
+    return(
+        <svg className="inline w-6 h-6 pb-1 text-gray-600 dark:text-gray-400" xmlns="http://www.w3.org/2000/svg"  fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path d="M12 14l9-5-9-5-9 5 9 5z" />
+        <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222" />
+        </svg>
+    )
+}
 
 function Dot(){
     return(
@@ -78,27 +84,49 @@ const UpArrow = () => {
 
 export default function Experience() {
 
-    const [selected, setSelected] = useState('dataArchitect')
 
     return (
-    <div className="flex flex-col justify-center items-center w-full">
+    <div className="">
 
         {/* Heading */}
-        <div className="flex items-center w-full space-x-4">
+        {/* <div className="flex items-center w-full space-x-4 mt-20">
             <div className=" flex-1 h-1 bg-websitedark-orange"></div>
-            <span className="md:text-4xl text-3xl font-semibold tracking-tight inline">Experience</span>
+            <span className="md:text-4xl text-3xl font-semibold tracking-tight inline">Resume</span>
             <div className=" flex-1 h-1 bg-websitedark-orange"></div>
-        </div>
-        {/* Experience */}
-        {/* <div className="flex items-center justify-start w-full mt-16 mb-5">
-            <span className="md:text-xl text-lg font-semibold tracking-tight inline">Summary</span>
         </div> */}
-        <div className="border border-gray-300 dark:border-gray-700 
-        rounded-lg px-2 py-5 my-10 xl:w-4/5">
-            {/* <div className="border-b-2 w-1/3 mx-auto mb-10 hidden xl:block"></div> */}
-            <p className="block text-center font-semibold tracking-tight">Current Technologies</p>
+        <div className="w-full border border-gray-300 dark:border-gray-700 
+    rounded-lg px-2 py-5 flex flex-col justify-center items-center mt-10 mb-20 pb-20">
+        
+        {/* Resume */}
 
-            <div className="xl:px-10 px-2 mt-10">
+        {/* Heading Section */}
+        <div className="w-full flex xl:flex-row flex-col items-center justify-between px-20 mt-20 mb-5">
+        <div>
+            <p className="xl:text-2xl text-xl font-bold tracking-tight text-gray-400 dark:text-websitedark">Data Solution Architect</p>
+            <p className="xl:text-4xl text-3xl font-bold tracking-tight">Abhik Ghosh</p>
+        </div>
+        <div className="flex flex-col">
+            <p className="text-right"><span className="font-semibold">Phone: </span>+91 760 583 5229</p>
+            <p className="text-right"><span className="font-semibold">Website:  </span>abhikghosh.in</p>
+            <p className="text-right"><span className="font-semibold">Email:  </span>abhik.ghosh5@gmail.com</p>
+            <p className="text-right"><span className="font-semibold">LinkedIn:  </span>https://www.linkedin.com/in/abhik-ghosh </p>
+            
+        </div>
+        </div>
+
+        {/* Exp Summary */}
+        <div className="bg-gray-300 dark:bg-gray-700 w-full xl:w-4/5 mt-10 mb-5 py-1 md:px-5 px-2 rounded-sm xl:transform xl:scale-x-105">
+            <p className=" font-semibold tracking-tight">Experience Summary</p>
+        </div>
+        <div className="xl:w-4/5 w-full">
+            <p>Highly effective Data Architect with over 13 years of experience specializing in working with big data, cloud, data, and analytics platforms. Offering an array of skills in data platform, data governance, data warehouse, and analytics.</p>
+        </div>
+
+        {/* Skills */}
+            <div className="bg-gray-300 dark:bg-gray-700 w-full xl:w-4/5 mt-10 mb-5 py-1 md:px-5 px-2 rounded-sm xl:transform xl:scale-x-105">
+            <p className=" font-semibold tracking-tight">Skills</p>
+            </div>
+            <div className="xl:w-4/5 w-full">
             <span className="font-semibold">Data Warehouse/ Data Lake</span> - <span className="text-gray-600 dark:text-gray-400">Azure Synapse, Teradata, SQL Server DW</span><br/>
             <span className="font-semibold">ETL/ ELT</span> - <span className="text-gray-600 dark:text-gray-400">Talend Big Data, SSIS</span><br/>
             <span className="font-semibold">RDBMS/ No Sql</span> - <span className="text-gray-600 dark:text-gray-400">SQL Server, MongoDB</span><br/>
@@ -111,10 +139,11 @@ export default function Experience() {
 
             {/* <div className="border-b-2 w-1/3 mx-auto mt-10 hidden xl:block"></div> */}
         
-        </div>
-            
-        <p className="block text-center font-semibold tracking-tight">Role Progression</p>
-        <div className="xl:w-4/5 mt-10">
+
+            <div className="bg-gray-300 dark:bg-gray-700 w-full xl:w-4/5 mt-10 mb-5 py-1 md:px-5 px-2 rounded-sm xl:transform xl:scale-x-105">
+            <p className=" font-semibold tracking-tight">Work Experience</p>
+            </div>
+        <div className="xl:w-4/5">
             <div className="flex flex-col-reverse md:flex-row md:justify-between md:items-center mb-5">
             <p className="font-semibold tracking-tight">Data Architect</p>
             <p className="font-semibold tracking-tight text-gray-500 dark:text-gray-400">October 2018 - Present</p>
@@ -177,19 +206,7 @@ export default function Experience() {
             </ul>
         </div>
 
-        <div className="border border-gray-300 dark:border-gray-700 
-        rounded-lg px-2 py-5 my-10 xl:w-4/5">
-            {/* <div className="border-b-2 w-1/3 mx-auto mb-10 hidden xl:block"></div> */}
-            <p className="block text-center font-semibold tracking-tight">Accomplishments</p>
-
-            <div className="xl:px-10 px-2 mt-5 pb-5">
-            <span className="text-gray-600 dark:text-gray-400">Published whitepapers on : Search Optimization techniques, Data Cataloging in an multi cloud environment and ETL DevSecOps</span><br/> <br />
-            <span className="text-gray-600 dark:text-gray-400">Volunteered for Vital Voice as an organizer of Seattle meetup. Vital Voice is a Washinton DC based non-profit org that works  in the areas of economic empowerment, women&apos;s political participation, and human rights. </span><br/>
-            </div>
-
-            {/* <div className="border-b-2 w-1/3 mx-auto mt-10 hidden xl:block"></div> */}
         
-        </div>
 
         {/* Roles */}
         {/* <div className="flex items-center justify-start w-full mt-16">
@@ -212,6 +229,32 @@ export default function Experience() {
                 </div>
             </div>
         </div> */}
+
+        {/* Education */}
+        <div className="bg-gray-300 dark:bg-gray-700 w-full xl:w-4/5 mt-10 mb-5 py-1 md:px-5 px-2 rounded-sm xl:transform xl:scale-x-105">
+            <p className=" font-semibold tracking-tight">Education</p>
+        </div>
+        <div className="xl:w-4/5">
+            <p className="">
+                <Uni /> <span className="font-semibold">Bachelor of Technology in Electrical Engineering(2003 - 2007)</span> - <a href="https://makautwb.ac.in/" target="_blank" rel="noreferrer" className="text-gray-600 dark:text-gray-400">West Bengal University of Technology, Kolkata</a><br/>
+                <Uni /> <span className="font-semibold">Post Graduate Diploma in Data Science(2018 - 2019)</span> - <a href="https://www.iiitb.ac.in/" target="_blank" rel="noreferrer" className="text-gray-600 dark:text-gray-400">International Institute of Information Technology, Bangalore</a>
+            </p>
+        </div>
+
+        {/* Accomplishments */}
+        <div className="bg-gray-300 dark:bg-gray-700 w-full xl:w-4/5 mt-10 mb-5 py-1 md:px-5 px-2 rounded-sm xl:transform xl:scale-x-105">
+            <p className=" font-semibold tracking-tight">Interests</p>
+        </div>
+        <div className="xl:w-4/5">
+            <p className="">
+                <span className="text-gray-600 dark:text-gray-400">Published whitepapers on : Search Optimization techniques, Data Cataloging in an multi cloud environment and ETL DevSecOps</span><br/> <br />
+                <span className="text-gray-600 dark:text-gray-400">Volunteered for Vital Voice as an organizer of Seattle meetup. Vital Voice is a Washinton DC based non-profit org that works  in the areas of economic empowerment, women&apos;s political participation, and human rights. </span><br/>
+            </p>
+        </div>
+        
+        
+
+        </div>
         
     </div>
     )

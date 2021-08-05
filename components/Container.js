@@ -26,7 +26,7 @@ export default function Container(props) {
   };
 
   return (
-    <div className="" id="layout">
+    <div className=" w-full" id="layout">
     <Head>
         <title>{meta.title}</title>
         <link rel="icon" href="/static/images/favicon.ico" />
