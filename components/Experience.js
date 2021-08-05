@@ -102,14 +102,14 @@ export default function Experience() {
         {/* Heading Section */}
         <div className="w-full flex xl:flex-row flex-col items-center justify-between px-20 mt-20 mb-5">
         <div>
-            <p className="xl:text-2xl text-xl font-bold tracking-tight text-gray-400 dark:text-websitedark">Data Solution Architect</p>
-            <p className="xl:text-4xl text-3xl font-bold tracking-tight">Abhik Ghosh</p>
+            <p className="xl:text-2xl text-xl font-bold tracking-tight text-gray-400 dark:text-websitedark xl:text-left text-center">Data Solution Architect</p>
+            <p className="xl:text-4xl text-3xl font-bold tracking-tight xl:text-left text-center">Abhik Ghosh</p>
         </div>
-        <div className="flex flex-col">
-            <p className="text-right"><span className="font-semibold">Phone: </span>+91 760 583 5229</p>
-            <p className="text-right"><span className="font-semibold">Website:  </span>abhikghosh.in</p>
-            <p className="text-right"><span className="font-semibold">Email:  </span>abhik.ghosh5@gmail.com</p>
-            <p className="text-right"><span className="font-semibold">LinkedIn:  </span>https://www.linkedin.com/in/abhik-ghosh </p>
+        <div className="flex flex-col mt-5 xl:mt-0">
+            <p className="xl:text-right text-center"><span className="font-semibold">Phone: </span>+91 760 583 5229</p>
+            <p className="xl:text-right text-center"><span className="font-semibold">Website:  </span>abhikghosh.in</p>
+            <p className="xl:text-right text-center"><span className="font-semibold">Email:  </span>abhik.ghosh5@gmail.com</p>
+            <p className="xl:text-right text-center"><span className="font-semibold">LinkedIn:  </span>https://www.linkedin.com/in/abhik-ghosh </p>
             
         </div>
         </div>
