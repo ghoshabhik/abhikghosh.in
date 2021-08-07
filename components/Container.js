@@ -57,6 +57,7 @@ export default function Container(props) {
                 <NavigationBar />
             </div>
         </nav>
+        <main>
         <div id="skip" className="
             xl:w-3/5 lg:w-4/5 w-full lg:mx-auto 
             px-2 lg:px-0">
@@ -72,7 +73,7 @@ export default function Container(props) {
             </motion.div>
             <Footer />
         </div>
-
+        </main>    
     </div>
   );
 }

@@ -47,8 +47,8 @@ export default function Article({ posts }) {
               Articles
             </h1>
             <p className="text-gray-600 dark:text-gray-400 mb-4">
-              {`I've been writing online since 2014, mostly about web development and tech careers.
-                In total, I've written ${posts.length} articles on this site.
+              {`These are ${posts.length} articles mostly about software development, technologies and recent tech news in the data world.
+                
                 Use the search below to filter by title.`}
             </p>
             <div className="relative w-full mb-4">
@@ -80,9 +80,11 @@ export default function Article({ posts }) {
                 No posts found.
               </p>
             }
+            <div className="flex flex-col space-y-3">
             {filteredBlogPosts.map((frontMatter) => (
               <BlogPost key={frontMatter.title} {...frontMatter} />
             ))}
+            </div>
           </div> 
         </div> 
       </Container>

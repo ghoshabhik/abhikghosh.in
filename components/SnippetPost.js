@@ -14,8 +14,8 @@ const BlogPost = ({ title, summary, slug, image, gitHub, hosted }) => {
     return (
         <motion.div className="
         cursor-pointer rounded-lg border border-gray-300 dark:border-gray-700
-        bg-gray-100 dark:bg-gray-800 shadow-md"
-        whileHover={{ borderColor: '#CE3F37' }}
+        bg-gray-50 dark:bg-gray-800 shadow-md"
+        whileHover={{ borderColor: '#4B5563' }}
         transition={{ duration: .2 }}
         >
         <Link href={`/snippet/${slug}`}>
@@ -23,30 +23,24 @@ const BlogPost = ({ title, summary, slug, image, gitHub, hosted }) => {
             <div className="mb-8 w-full">
             <div className="flex flex-col justify-center ">
 
-                {/* <Image 
-                src={image}
-                width={300}
-                height={100}
-                // className="object-cover"
-                alt={title}
-                /> */}
-                <h4 className="font-bold tracking-tight px-3 py-3 text-xl text-gray-900 dark:text-gray-100">
+                <h4 className="font-bold tracking-tight px-3 py-3 text-xl rounded-t-lg 
+                bg-gray-200 dark:bg-gray-700 text-gray-900 dark:text-gray-100">
                 {title}
                 </h4>
-                <hr />
-                <p className="text-gray-500 px-3 font-thin text-sm mt-5">
+                {/* <div className="w-full h-1 bg-gray-200 dark:bg-gray-700"></div> */}
+                <p className="text-gray-500 px-3 text-sm mt-5">
                 {`${data ? data?.view : '–––'} views`}
                 </p>
                 </div>
-                <p className="font-thin px-3 py-3 text-gray-800 dark:text-gray-300">{summary}</p>
+                <p className="font-base px-3 py-3 text-gray-800 dark:text-gray-300">{summary}</p>
                 </div>
                 
         </a>
         </Link>
-        <div className="flex justify-between items-center px-3 py-2 text-base text-gray-700 dark:text-gray-400">
+        {/* <div className="flex justify-between items-center px-3 py-2 text-base text-gray-700 dark:text-gray-400">
                     <a href={gitHub}>GitHub Repo</a>
                     <a href={hosted}>Hosted URL</a>
-                </div>
+        </div> */}
         </motion.div>
   );
 };

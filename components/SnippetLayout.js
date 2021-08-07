@@ -12,7 +12,7 @@ const editUrl = (slug) =>
   `https://github.com/ghoshabhik/abhikghosh.in/edit/main/data/blog/${slug}.mdx`;
 // const discussUrl = (slug) =>
 //   `https://mobile.twitter.com/search?q=${encodeURIComponent(
-//     `https://leerob.io/blog/${slug}`
+//     `https://www.abhikghosh.in/article/${slug}`
 //   )}`;
 
 export default function ProjectLayout({ children, frontMatter }) {
@@ -32,7 +32,7 @@ export default function ProjectLayout({ children, frontMatter }) {
           {frontMatter.title}
         </h1>
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center w-full mt-2 mb-10">
-          <div className="flex items-center">
+          <div className="flex items-center justify-between">
             <Image
               alt="Abhik Ghosh"
               height={24}
@@ -46,12 +46,14 @@ export default function ProjectLayout({ children, frontMatter }) {
               {format(parseISO(frontMatter.publishedAt), 'MMMM dd, yyyy')}
             </p>
           </div>
-          <p className="text-sm text-gray-500 min-w-32 mt-2 md:mt-0">
-            {frontMatter.readingTime.text}
-            {` • `}
-            {/* <ViewCount slug={frontMatter.slug}/> */}
-            {data? data.view + ' Views' : '--- Views'}
-          </p>
+          <div>
+            <p className="text-sm text-gray-500 min-w-32 mt-2 md:mt-0">
+              {frontMatter.readingTime.text}
+              {` • `}
+              {/* <ViewCount slug={frontMatter.slug}/> */}
+              {data? data.view + ' Views' : '--- Views'}
+            </p>
+          </div>
         </div>
         <div className="prose lg:prose-xl dark:prose-dark">
           {children}

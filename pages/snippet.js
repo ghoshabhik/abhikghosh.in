@@ -46,9 +46,8 @@ export default function Snippet({ posts }) {
               Code Snippets
             </h1>
             <p className="text-gray-600 dark:text-gray-400 mb-4">
-              {`I would like to highlight these ${posts.length} projects here.
-                I built a small dashboard based on my github data for a quick reference on what is going on with my github profile.
-                Please do let me know if you have any comment, suggestion or question on any of the projects. Also use the search box to filter projects by title.`}
+              {`These are ${posts.length} code snippets. These are not complete projects but a bits and peieces of collection of how-tos, and programs that can be used for your projects. These  snippets codes
+              are checked-in to github. Please do let me know if you have any comment, suggestion or question on any of these. Also use the search box to filter projects by title.`}
             </p>
 
             
@@ -58,7 +57,7 @@ export default function Snippet({ posts }) {
               aria-label="Search code snippets"
               type="text"
               onChange={(e) => setSearchValue(e.target.value)}
-              placeholder="Search projects"
+              placeholder="Search code snippets"
               className="px-4 py-2 border border-gray-300 dark:border-gray-900 focus:ring-blue-500 focus:border-blue-500 block w-full rounded-md bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100"
             />
             <svg
@@ -82,7 +81,7 @@ export default function Snippet({ posts }) {
                 No posts found.
               </p>
             }
-            <div className="grid xl:grid-cols-2 grid-cols-1 gap-x-5 gap-y-3">
+            <div className="flex flex-col space-y-3">
             {filteredBlogPosts.map((frontMatter) => (
               <ProjectPost key={frontMatter.title} {...frontMatter} />
             ))}
