@@ -17,7 +17,7 @@ export default function Admin() {
        <div className="h-20 xl:h-36"></div>
 
        <div className="flex flex-col space-y-5 w-full  mx-auto">
-        {user ? <AdminSection user={user}/> : 
+        {user && user.email === 'avik5324@gmail.com' ? <AdminSection user={user}/> : 
         <div className="w-full  bg-gray-200 dark:bg-gray-700 border rounded-lg px-10 py-10 text-center
         font-extrabold my-20
         flex flex-col justify-center items-center">
