@@ -15,7 +15,7 @@ export default function NavigationBar() {
       fixed w-full z-20 
       border-b border-gray-300 dark:border-gray-700
       px-2 lg:px-0
-      backdrop-filter backdrop-blur-md"
+      backdrop-filter backdrop-blur-sm"
       onClick={ () => mobileMenu && setMobileMenu(!mobileMenu)}
       >
         <div className="
@@ -46,8 +46,8 @@ export default function NavigationBar() {
             <div className="md:flex md:space-x-5 hidden">
               <Link href="/" passHref><a>Home</a></Link>
               <Link href="/resume" passHref><a>My Resume</a></Link>
-              {/* <Link href="/snippet" passHref><a>Snippets</a></Link>
-              <Link href="/article" passHref><a>Articles</a></Link> */}
+              {/* <Link href="/snippet" passHref><a>Snippets</a></Link> */}
+              <Link href="/article" passHref><a>Articles</a></Link>
               <Link href="/recents" passHref><a>Dash</a></Link>
             </div>
             
@@ -73,8 +73,8 @@ export default function NavigationBar() {
           text-right font-semibold">
             <Link href="/" passHref><a>Home</a></Link>
             <Link href="/resume" passHref><a>My Resume</a></Link>
-            {/* <Link href="/snippet" passHref><a>Snippets</a></Link>
-            <Link href="/article" passHref><a>Articles</a></Link> */}
+            {/* <Link href="/snippet" passHref><a>Snippets</a></Link> */}
+            <Link href="/article" passHref><a>Articles</a></Link>
             <Link href="/recents" passHref><a>Dash</a></Link>
           </div>
         </div> }

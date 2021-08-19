@@ -23,16 +23,19 @@ export default function BlogLayout({ children, frontMatter }) {
   const { data } = useSWR(`/api/get-page-view?id=${frontMatter.slug}`, fetcher, {refreshInterval: 2000})
 
   return (
-      <Container>
+      <Container 
+      title={frontMatter.title} 
+      description= {frontMatter.summary}
+      >
         <div className="h-36"></div>
       <div className="flex items-center justify-start space-x-4  w-full 
               border border-gray-300 dark:border-gray-700 
               rounded-lg py-10 px-2 md:px-10">
       <article className="flex flex-col justify-center items-start mx-auto mb-16 px-2 lg:px-0">
-        <h1 className="font-bold text-3xl md:text-5xl tracking-tight mb-4 text-black dark:text-white">
+        <h1 className="font-bold text-3xl md:text-5xl tracking-tight mb-4 text-black dark:text-white text-center">
           {frontMatter.title}
         </h1>
-        <div className="flex flex-col md:flex-row justify-between md:items-center mt-2 mb-10 w-full">
+        <div className="flex flex-col md:flex-row justify-around md:items-center my-20 w-full">
           <div className="flex items-center">
             <Image
               alt="Abhik Ghosh"
@@ -56,8 +59,10 @@ export default function BlogLayout({ children, frontMatter }) {
           </p>
           </div>
         </div>
-        <div className="prose lg:prose-xl dark:prose-dark max-w-none w-full">
+        <div className="w-full flex justify-center">
+        <div className="prose lg:prose-xl dark:prose-dark max-w-none w-full ">
           {children}
+        </div>
         </div>
         <div className="mt-8">
         </div>
