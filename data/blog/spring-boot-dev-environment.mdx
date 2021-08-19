@@ -6,15 +6,209 @@ image: ''
 tags: ['springboot', 'java','setup','docker']
 ---
 
-I spend lot of my work time developing Spring boot applications. Some of the projects I do are quick exploration more often than a huge production ready application. These exploration type projects are to test some ideas or to quickly show a functionality to the cutomer to get their feedback. I always wanted to have a simple development environment which are portable but wont put me in an entanglement of hundreds of moving components. 
+I spend lot of my work time developing Spring boot applications. Some of the projects I do are quick exploration more often than a huge production ready application. These exploration type projects are to test some ideas or to quickly show a functionality to the cutomer to get their feedback. I always wanted to have a simple development environment which is portable and also will not put me in an entanglement of hundreds of moving components. 
 
-Since Spring Boot 2.3 - the docker image build functionality has quite solved my problem and helped my minimalistic setup with a handful of steps. I still would like to get an Java development environment setup with intellJ similar to what Remote Container plugin enables VS Code to do for Python, Go or Javascript. However, I am quite happy with my current setup. Also, please note, I'm writing this as a Windows OS user, your setup may vary a little for other OS. 
+Since Spring Boot 2.3 - the docker image build functionality has quite solved my problem and helped my minimalistic setup with a handful of steps. I still would like to get a Java development environment setup with intellJ similar to what Remote Container plugin enables VS Code to do for Python, Go or Javascript. However, I am quite happy with my current setup. Also, please note, I'm writing this as a Windows OS user, your setup may vary a little for other OS. 
 
 ### Tools we need: 
-* IntelliJ Idea - Community edition will do. Community edition requires the Docker Plugin to be installed manually which is available in IntelliJ Marketplace. 
-* Docker Desktop
+* **IntelliJ Idea** - Community edition will do. Community edition requires the Docker Plugin to be installed manually which is available in IntelliJ Marketplace. 
+* **Docker Desktop**
 
-### Here are the Steps
+### Here are the Pre-requisites
 
 **Step 1** - Install [IntelliJ Idea latest version](https://www.jetbrains.com/idea/download). <br />
 **Step 2** - Install [Docker Desktop latest version](https://hub.docker.com/editions/community/docker-ce-desktop-windows)
+
+For the demo, let me use one of my sample [spring boot TODO app](https://github.com/ghoshabhik/springboot-docker-dev-starter). This is a very simple app built with basic CRD operations. 
+
+<Image
+  alt={`Todo App`}
+  src={`/static/blog/local-springboot-setup/app1.JPG`}
+  width={400}
+  height={500}
+  priority
+  className="border border-gray-300 rounded-md shadow-sm"
+/>
+
+This app is created with Thymeleaf as template engine and with three basic controller endpoints to add a Todo, delete a Todo and List all the Todos. The app persists its data on a Mysql db. Please refer to the [github repo](https://github.com/ghoshabhik/springboot-docker-dev-starter) for the app code. However basic the app is, it helps us explore the development environment setup process nicely. This is a common spring boot project structure, which you'd come across with additional bells and whislte for real world development. But the root structure remains the same. Okay, enough rambling lets try to understand the design with the following diagram.
+
+<Image
+  alt={`Setup Architecture`}
+  src={`/static/blog/local-springboot-setup/setup-architecture.JPG`}
+  width={600}
+  height={300}
+  priority
+  className="border border-gray-300 rounded-md shadow-sm"
+/>
+
+There are four components here - A springboot maven plugin, Spring DevTools, IntelliJ Idea IDE and Docker Desktop.
+
+### Lets talk about the setup
+
+Clone the project from [github](https://github.com/ghoshabhik/springboot-docker-dev-starter) with your IDE. 
+
+<Image
+  alt={`project clone`}
+  src={`/static/blog/local-springboot-setup/clone-project.JPG`}
+  width={600}
+  height={300}
+  priority
+  className="border border-gray-300 rounded-md shadow-sm"
+/>
+
+Here is the project structure after the project loads in IntelliJ IDE.
+
+<Image
+  alt={`project structure`}
+  src={`/static/blog/local-springboot-setup/project-structure.JPG`}
+  width={300}
+  height={500}
+  priority
+  className="border border-gray-300 rounded-md shadow-sm"
+/>
+
+Now, create your application docker image manually once. Enter the following on your terminal at the project root location
+
+```bash
+/path/to/project_root > mvn -DskipTests spring-boot:build-image
+```
+
+I skipped the test here. I manually run the unit tests and do not prefer all the tests to be run everytime I make a small change and save the project. Please note, this is not the deployment process, this is an easy way to setup your local development environment. You may choose to run the test manually once the development work completes a pre-defined stage. 
+
+After the above commands runs successfully, you may see your newly created application image in docker images List
+```bash
+docker image ls
+```
+If you use attached github project, you should see an image: springdevstarter:0.0.1-SNAPSHOT on the previous command output.
+
+Next, create a docker-compose file
+```Dockerfile
+//docker-compose.yml
+
+version: '3.7'
+
+services:
+  db:
+    image: "mysql:latest"
+    environment:
+      - MYSQL_ROOT_PASSWORD=letsgoabhik
+      - MYSQL_DATABASE=mydb
+    ports:
+      - 3306:3306
+
+  todo:
+    image: "springdevstarter:0.0.1-SNAPSHOT"
+    ports:
+      - 9090:9090
+    depends_on:
+      - db
+```
+Now, go to File > Settings > Build, Execution, Deployment > Docker. <br/>
+make sure your IDE is configured with Docker Desktop 
+<Image
+  alt={`Ide docker config`}
+  src={`/static/blog/local-springboot-setup/ide-docker-config.JPG`}
+  width={600}
+  height={500}
+  priority
+  className="border border-gray-300 rounded-md shadow-sm"
+/>
+
+Click 'Services' tab on the bottom menu of the IDE
+<Image
+  alt={`services tab`}
+  src={`/static/blog/local-springboot-setup/service-docker.JPG`}
+  width={600}
+  height={50}
+  priority
+  className="border border-gray-300 rounded-md shadow-sm"
+/>
+
+Now, start the docker service
+<Image
+  alt={`start docker service`}
+  src={`/static/blog/local-springboot-setup/start-docker-service.JPG`}
+  width={600}
+  height={400}
+  priority
+  className="border border-gray-300 rounded-md shadow-sm"
+/>
+
+Once the docker service is started successfully, this panel will show the list of images and containers on the system. The following image is for your reference, your list will be different than mine. 
+<Image
+  alt={`started docker service`}
+  src={`/static/blog/local-springboot-setup/started-docker-service.JPG`}
+  width={600}
+  height={400}
+  priority
+  className="border border-gray-300 rounded-md shadow-sm"
+/>
+
+At this point, kick off the docker compose and verify your application is up and running
+<Image
+  alt={`start docker compose`}
+  src={`/static/blog/local-springboot-setup/start-docker-compose.JPG`}
+  width={600}
+  height={400}
+  priority
+  className="border border-gray-300 rounded-md shadow-sm"
+/>
+Verify the containers are up. The Todo container fails to start for the first time. Please right click on the container and run again.
+ <Image
+  alt={`docker compose up`}
+  src={`/static/blog/local-springboot-setup/app-running.JPG`}
+  width={600}
+  height={400}
+  priority
+  className="border border-gray-300 rounded-md shadow-sm"
+/>
+
+Now, we need to configure DevTools. Go to Run > Edit Configurations. Click the '+' sign to add a new configuration. Select 'Application' as the config type. Add this as class name : org.springframework.boot.devtools.RemoteSpringApplication
+ <Image
+  alt={`Run Configuration 1`}
+  src={`/static/blog/local-springboot-setup/config1.JPG`}
+  width={600}
+  height={400}
+  priority
+  className="border border-gray-300 rounded-md shadow-sm"
+/>
+
+Press <kbd>Alt + M</kbd> and add a before launch task(Maven task). Enter the following goal when prompted. 
+-DskipTests spring-boot:build-image
+ <Image
+  alt={`Maven Goal`}
+  src={`/static/blog/local-springboot-setup/maven-goal.JPG`}
+  width={600}
+  height={400}
+  priority
+  className="border border-gray-300 rounded-md shadow-sm"
+/>
+
+Click ok to continue
+
+Now your Development environment is ready. 
+
+Right Click on the running Compose file and click stop. Then go ahead and run the configuration you just now created. Then restart the compose file to run the containers.
+
+### Lets quickly summarize
+
+At this point, you have your DevTools setup which is watch any file change. If there is any file change, it will kickoff a new build using the maven goal that you added. The maven goal will update the todo app image and the docker integration with the IDE will automatically use the latest image for the TODO container. So, any changes you make in your code, will soon be reflected on your application running on the docker container. 
+
+### Demo
+ <Image
+  alt={`Demo`}
+  src={`/static/blog/local-springboot-setup/recording.gif`}
+  width={800}
+  height={500}
+  priority
+  className="border border-gray-300 rounded-md shadow-sm"
+/>
+
+And this is my minimalitic Java Spring development setup. If you have any question. Please do let me know in the below discussion box. Happy Coding!! 
+
+
+### Gotchas: 
+There are some common errors you may face while setting these up in windows machine. The following links are helpful to navigate your way through:
+
+[DevTools may not work on IntelliJ Idea as is](https://stackoverflow.com/questions/35895730/spring-boot-devtools-static-content-reloading-does-not-work-in-intellij)
+
