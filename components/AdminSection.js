@@ -37,6 +37,15 @@ function ServicesRefresh(){
         setLoading(false)    
     }
 
+    const refreshTodoist = async () => {
+        setLoading(true)
+         const todoist = await fetch('/api/load-todoist-data')
+         const todoistData = await todoist.json() 
+         console.log(todoistData)
+         setError('Todoist Data Refreshed Successfully...')
+        setLoading(false)    
+    }
+
     
 
     return(
@@ -48,6 +57,8 @@ function ServicesRefresh(){
             onClick={refreshTwitter}>Refresh Twitter</button>
             <button className="border-2 border-websitedark-orange dark:border-websitedark-orange px-3 py-2 rounded-lg"
             onClick={refreshInstagram}>Refresh Instagram</button>
+            <button className="border-2 border-websitedark-orange dark:border-websitedark-orange px-3 py-2 rounded-lg"
+            onClick={refreshTodoist}>Refresh Todoist</button>
             
         </div>
         <p className="py-5 text-center">{loading ? 'Loading...' : error}</p>
